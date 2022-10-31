@@ -1,6 +1,7 @@
 # Oct 2022 : CCC SRMIST KTR : CPS 02 : Sprint II Coding
 
-### P 501 - Orange Partitioning
+### P 501 - Orange Partitioning 
+![c](https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white)
 ```c
 #include <stdio.h>
 #include <string.h>
@@ -34,6 +35,7 @@ int main() {
 ```
 
 ### P 502 - Tisha and Orange Sorting
+![Python](https://img.shields.io/badge/Python3-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
 ```python
 def swap(a,b):
     temp = a
@@ -64,6 +66,7 @@ Quicksort(a,0,n-1)
 ```
 
 ### P 503 - One Teacher Two Classes
+![Python](https://img.shields.io/badge/Python3-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
 ```python
 def mergeArrays(arr1, arr2, n1, n2, arr3):
     i = 0
@@ -98,6 +101,7 @@ for i in range(n+m):
 ```
 
 ### P 504 - Vasya and Birthday Presents
+![Python](https://img.shields.io/badge/Python3-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
 ```python
 def merge(start,mid,end,a):
     arr = [0] * (end-start+1)
@@ -146,7 +150,9 @@ while l<t:
     print()
     l+=1
 ```
+
 ### Q 101 - Trees - Inorder Traversal
+![c](https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white)
 ```c
 #include <stdio.h>
 #include <stdlib.h>
@@ -199,6 +205,7 @@ int main() {
 ```
 
 ### Q 102 - Trees - Preorder Traversal
+![c](https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white)
 ``` c
 #include <stdio.h>
 #include <stdlib.h>
@@ -248,6 +255,7 @@ int main() {
 ```
 
 ### Q 103 - Trees - Postorder Traversal
+![c](https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white)
 ``` c
 #include <stdio.h>
 #include <stdlib.h>
@@ -298,6 +306,7 @@ int main() {
 ```
 
 ### Q 301 - Trees - Height of a Binary Tree
+![c](https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white)
 ```c
 #include <stdio.h>
 #include <stdlib.h>
@@ -357,6 +366,7 @@ int main(void) {
 ```
 
 ### Z 460 Date Sorting
+![CPP](https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)
 ``` cpp
 #include <iostream>
 #include <string>
@@ -402,7 +412,9 @@ int main() {
     return 0;
 }
 ```
+
 ### Q 501 - Mirror Tree
+![Python](https://img.shields.io/badge/Python3-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
 ```python
 def main():
     N = int(input())
