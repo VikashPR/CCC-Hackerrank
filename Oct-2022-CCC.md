@@ -483,6 +483,23 @@ class Node:
 main()
 ```
 
+### Q 802 - Inorder Traversal Restoration
+![Python](https://img.shields.io/badge/Python3-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
+```python
+def convert(post):
+    if len(post) == 1:
+        return post
+    left = post[:len(post)//2]
+    right = post[len(post)//2:len(post)-1]
+    root = post[len(post)-1]
+    return convert(left) + root + convert(right)
+
+post = input()
+
+print(convert(post))
+
+
+```
 ### CCT A4 - Greatest Number with the Digits
 ![Python](https://img.shields.io/badge/Python3-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
 ```python
