@@ -713,6 +713,28 @@ int main() {
     return 0;
 }
 ```
+### N D03 - Residue of Execution
+![c](https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white)
+```c
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int RE(int n,int k)
+{
+    return n==1 ? 1 : (RE(n-1,k)+k-1)%n+1;
+}
+
+int main() 
+{
+    int n,k;
+    scanf("%d %d",&n,&k);
+    
+    printf("%d",RE(n,k));
+    return 0;
+}
+```
 
 ### Tree : Top View
 ![Python](https://img.shields.io/badge/Python3-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
