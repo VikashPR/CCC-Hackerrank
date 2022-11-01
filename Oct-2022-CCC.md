@@ -482,6 +482,35 @@ class Node:
         self.right = None
 main()
 ```
+
+### CCT A4 - Greatest Number with the Digits
+![Python](https://img.shields.io/badge/Python3-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
+```python
+def printMaximum(inum):
+ 
+    count = [0 for x in range(10)]
+ 
+    string = str(num)
+ 
+    for i in range(len(string)):
+        count[int(string[i])] = count[int(string[i])] +  1
+ 
+    result = 0
+    multiplier = 1
+ 
+    for i in range(10):
+        while count[i] > 0:
+            result = result + ( i * multiplier )
+            count[i] = count[i] - 1
+            multiplier = multiplier * 10
+ 
+    return result
+ 
+
+num = input()
+print(printMaximum(num))
+```
+
 ### Contacts Application 
 ![cpp](https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)
 ```cpp
