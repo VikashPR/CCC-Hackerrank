@@ -76,3 +76,62 @@ public class Solution{
      }
 }
 ```
+
+### OO 03 - Abstract Classes
+![java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white)
+
+```java
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+abstract class Arithmetic
+{
+  abstract int add(int a, int b);
+  abstract int subtract(int a, int b);
+  abstract int multiply(int a, int b);
+  abstract int divide(int a, int b);
+}
+
+//BODY STARTS HERE
+ class Calculator extends Arithmetic
+{
+    public int add(int a, int b)
+    {
+        return a+b;
+        
+    }
+    public int subtract(int a, int b)
+    {
+        return a-b;
+        
+    }
+    public int multiply(int a, int b)
+    {
+        return a*b;
+        
+    }
+    public int divide(int a, int b)
+    {
+        return a/b;
+        
+    }   
+    
+}
+//BODY ENDS HERE
+
+public class Solution
+{
+  public static void main(String args[])
+  {
+    Calculator cal = new Calculator();
+   	int A = 10, B = 5;
+   	System.out.println("Addition Result : " + cal.add(A, B));
+    System.out.println("Subtraction Result : " + cal.subtract(A, B));
+    System.out.println("Multiplication Result : " + cal.multiply(A, B));
+    System.out.println("Division Result : " + cal.divide(A, B));
+  }
+}
+```
