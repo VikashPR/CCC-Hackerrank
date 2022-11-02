@@ -1,5 +1,5 @@
 # Oct 2022 : CCC SRMIST KTR : CPS 02 : Sprint II Coding
-
+[🙂Click here for Nov-2022-OOP Code ](https://github.com/VikashPR/CCC-Hackerrank/blob/main/Nov-2022-CCC-OOP.md)
 ### P 501 - Orange Partitioning 
 ![c](https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white)
 ```c
