@@ -190,6 +190,61 @@ class Solution{
 }
 ```
 
+### OO 05 - Comparator Interface
+![java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white)
+```java
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Point
+{
+	public int x;
+	public int y;
+	public Point(int _x, int _y)
+	{
+		x = _x;
+		y = _y;
+	}
+}
+
+//BODY STARTS HERE
+
+class sortByX implements Comparator<Point>
+{
+	public int compare(Point a,Point b){
+        if(a.y==b.y){
+        return a.x-b.x;
+        }
+        else{
+        return a.y-b.y;
+        }
+}
+}
+
+//BODY ENDS HERE
+
+public class Solution
+{
+	public static void main (String[] args)
+	{
+		// your code goes here
+		ArrayList<Point> ar = new ArrayList<Point>();
+		ar.add(new Point(1,1));
+		ar.add(new Point(1,2));
+		ar.add(new Point(2,2));
+		ar.add(new Point(2,1));
+		
+		Collections.sort(ar, new sortByX());
+		
+		for (int i = 0; i < 4; i++)
+		{
+			System.out.println(ar.get(i).x + " " + ar.get(i).y);
+		}
+	}
+}
+```
+
 ### OO 06 - Method Overriding in Java
 ![java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white)
 ```java
