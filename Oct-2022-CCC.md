@@ -35,34 +35,61 @@ int main() {
 ```
 
 ### P 502 - Tisha and Orange Sorting
-![Python](https://img.shields.io/badge/Python3-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
-```python
-def swap(a,b):
-    temp = a
-    a = b
-    b = temp
-    return a,b
-def partition(a,l,r):
-    x = a[r]
-    i = l-1
-    for j in range(l,r):
-        if(a[j]<=x):
-            i = i+1
-            a[i],a[j] = swap(a[i],a[j])
-    a[i+1],a[r] = swap(a[i+1],a[r])
-    return (i+1)xq
-def Quicksort(a,l,r):
-    if l<r:
-        p = partition(a,l,r)
-        print(p)
-        for i in range(l,r+1):
-            print(a[i],end=" ")
-        print()
-        Quicksort(a,l,p-1)
-        Quicksort(a,p+1,r)
-n = int(input())
-a = list(map(int,input().split()))
-Quicksort(a,0,n-1)
+![CPP](https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)
+```c++
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+void swap(int *a, int *b){ 
+    int temp = *a; 
+    *a = *b; 
+    *b = temp; 
+} 
+int partition (int a[], int l, int r) 
+{ 
+    int x = a[r];
+    int i = (l - 1); 
+    for (int j = l; j <= r-1; j++) 
+    { 
+        if (a[j] <= x) 
+        { 
+            i++; 
+            swap (&a[i], &a[j]); 
+        } 
+    } 
+    swap (&a[i + 1],&a[r]); 
+    return (i + 1); 
+} 
+void Quicksort(int a[], int l, int r)
+{
+    int i,p;
+    if (l < r)
+    {
+        p = partition(a, l, r);
+        cout<<p<<endl;
+        for(i=l;i<=r;i++)
+        {
+            cout<<a[i]<<" ";
+        }
+        cout<<endl;
+        Quicksort(a, l, p - 1);
+        Quicksort(a, p + 1, r);
+        }
+}
+int main() {
+    int n;
+    cin>>n;
+    int a[n],i;
+    for(i=0;i<n;i++)
+        cin>>a[i];
+      Quicksort(a,0,n-1);
+   
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
+    return 0;
+}
 ```
 
 ### P 503 - One Teacher Two Classes
