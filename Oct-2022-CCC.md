@@ -853,3 +853,73 @@ if __name__ == '__main__':
 
     findPostorder(inorder, preorder)
 ```
+
+### R 305 - Height of a Binary Search Tree
+![c](https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white)
+```c
+#include <stdio.h>
+#include <malloc.h>
+
+struct Node {
+    int data;
+    struct Node *left;
+    struct Node *right;
+};
+
+struct Node* newNode(int data) {
+    struct Node *node = (struct Node*)malloc(sizeof(struct Node));
+    node->data = data;
+    node->left = NULL;
+    node->right = NULL;
+
+    return node;
+}
+
+int max(int a, int b) {
+    return a > b ? a : b;
+}
+
+int height(struct Node* root) {
+    if(root == NULL) {
+        return -1;
+    }
+
+    return 1 + max(height(root->left), height(root->right));
+}
+
+struct Node* insert(struct Node* root, int data) {
+    if(root == NULL) {
+        return newNode(data);
+    } else {
+        struct Node* cur;
+        if(data <= root->data) {
+            cur = insert(root->left, data);
+            root->left = cur;
+        } else {
+            cur = insert(root->right, data);
+            root->right = cur;
+        }
+
+        return root;
+    }
+}
+
+int main() {
+    struct Node* root = NULL;
+
+    int t;
+    int data;
+
+    scanf("%d", &t);
+
+    while(t-- > 0) {
+        scanf("%d", &data);
+        root = insert(root, data);
+    }
+
+    int h = height(root);
+    printf("%d", h + 1);
+
+    return 0;
+}
+```
