@@ -925,6 +925,7 @@ int main() {
 ```
 ### R 306 - Binary Search Tree Traversals 
 ![c](https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white)
+```c
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -1006,3 +1007,138 @@ int main() {
     printPostorder(root);
     return 0;
 }
+```
+### Binary Search Tree : Lowest Common Ancestor
+![Python](https://img.shields.io/badge/Python3-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
+```python
+class Node:
+    def _init_(self, info): 
+        self.info = info  
+        self.left = None  
+        self.right = None 
+        self.level = None 
+
+    def _str_(self):
+        return str(self.info) 
+
+class BinarySearchTree:
+    def _init_(self): 
+        self.root = None
+
+    def create(self, val):  
+        if self.root == None:
+            self.root = Node(val)
+        else:
+            current = self.root
+         
+            while True:
+                if val < current.info:
+                    if current.left:
+                        current = current.left
+                    else:
+                        current.left = Node(val)
+                        break
+                elif val > current.info:
+                    if current.right:
+                        current = current.right
+                    else:
+                        current.right = Node(val)
+                        break
+                else:
+                    break
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+'''
+class Node:
+      def _init_(self,info): 
+          self.info = info  
+          self.left = None  
+          self.right = None 
+           
+
+       // this is a node of the tree , which contains info as data, left , right
+'''
+
+def lca(root, v1, v2):
+  curr = root
+  while curr:
+    if curr.info > v2 and curr.info > v1:
+        curr = curr.left
+    elif curr.info < v1 and curr.info < v2:
+        curr = curr.right
+    else:
+        return curr
+  #Enter your code here
+tree = BinarySearchTree()
+t = int(input())
+
+arr = list(map(int, input().split()))
+
+for i in range(t):
+    tree.create(arr[i])
+
+v = list(map(int, input().split()))
+
+ans = lca(tree.root, v[0], v[1])
+print (ans.info)
+```
+
+### Binary Search Tree : Insertion
+![Python](https://img.shields.io/badge/Python3-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
+```python
+class Node:
+    def _init_(self, info):
+        self.info = info  
+        self.left = None  
+        self.right = None 
+        self.level = None 
+
+    def _str_(self):
+        return str(self.info) 
+
+def preOrder(root):
+    if root == None:
+        return
+    print (root.info, end=" ")
+    preOrder(root.left)
+    preOrder(root.right)
+    
+class BinarySearchTree:
+    def _init_(self): 
+        self.root = None
+#Node is defined as
+#self.left (the left child of the node)
+#self.right (the right child of the node)
+#self.info (the value of the node)
+
+    def insert(self, val):  # insert to tree
+        #Enter you code here.
+        if self.root is None:
+            self.root = Node(val)
+             
+        else:
+            self.insert_node(self.root, val)
+        return self.root
+            
+    def insert_node(self, node, val):  # recursive insert node
+            if val < node.info:
+                if node.left is None:
+                    node.left = Node(val)
+                    return
+                else:
+                    self.insert_node(node.left, val)
+            else:
+                if node.right is None:
+                    node.right = Node(val)
+                    return
+                else:
+                    self.insert_node(node.right, val)
+tree = BinarySearchTree()
+t = int(input())
+
+arr = list(map(int, input().split()))
+
+for i in range(t):
+    tree.insert(arr[i])
+
+preOrder(tree.root)
+```
