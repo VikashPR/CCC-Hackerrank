@@ -18,6 +18,9 @@ class Teenager extends HumanBeing{
 	void beArrogant(){
 		System.out.println("I am being arrogant");
 	}
+    void reasonlessRebel(){
+        System.out.println("I am a rebel");
+    }
 }
 //BODY OF THE CODE ENDS HERE
 
