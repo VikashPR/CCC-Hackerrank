@@ -98,7 +98,7 @@ while cards:
 print(rayinshi_score, neechea_score)
 ```
 
-### CCT A5 - Coins and Kefa
+# CCT A5 - Coins and Kefa
 ![CPP](https://img.shields.io/badge/C%2B%2B14-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)
 
 ``` cpp
