@@ -42,3 +42,35 @@ max_prod = max(prod1, prod2)
 print(max_prod)
 
 ```
+
+# R 103 : Pucca and The Card Game
+![Python](https://img.shields.io/badge/Python3-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
+
+``` python
+import math
+
+n = int(input())
+a = list(map(int, input().split()))
+
+i = 0
+j = n - 1
+k = 1
+b = [0, 0]
+
+while i <= j:
+    if k == 1:
+        k = 0
+    else:
+        k = 1
+    if a[i] < a[j]:
+        b[k] += a[j]
+        j -= 1
+    else:
+        b[k] += a[i]
+        i += 1
+
+if b[0] >= b[1]:
+    print("Pucca")
+else:
+    print("Garu")
+```
