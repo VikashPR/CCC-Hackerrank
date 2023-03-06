@@ -157,3 +157,18 @@ time_taken = max(abs(mice_pos[i] - holes_pos[i]) for i in range(n))
 
 print(time_taken)
 ```
+# R 502 : Hungry Monster Vs Trusty Blaster
+![Python](https://img.shields.io/badge/Python3-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
+
+``` python
+n,hit,t=map(int,input().split())
+l = sorted([int(i) for i in input().split()[0:n]])
+res,h=0,0
+for i in l:
+    h = i // hit+(1 if i%hit else 0)
+    if t >= h:
+        t -= h
+        res += 1
+    else: break
+print(res)
+```
