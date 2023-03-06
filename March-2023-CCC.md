@@ -139,4 +139,21 @@ int m,n;
     }
     /* Enter your code here. Read input from STDIN. Print output to STDOUT */    
     return 0;
-}```
+}
+```
+
+# R 105 : Mice reach the Home
+![Python](https://img.shields.io/badge/Python3-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
+
+``` python
+n = int(input())
+mice_pos = list(map(int, input().split()))
+holes_pos = list(map(int, input().split()))
+
+mice_pos.sort()
+holes_pos.sort()
+
+time_taken = max(abs(mice_pos[i] - holes_pos[i]) for i in range(n))
+
+print(time_taken)
+```
