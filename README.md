@@ -22,3 +22,17 @@
   </a>
 </p>
 
+
+## Contribution Guidelines
+
+**Types of Contributions:**
+- Pull Requests: Propose new features or changes to existing code. Make sure your code follows our conventions and does not break existing functionality. Test your code thoroughly and add the programing language used and the version.
+- Issues: Report bugs or suggest new features. Provide detailed information.
+
+**Contribution Process:**
+1. Fork the repository.
+2. Clone the forked repository to your local machine.
+3. Create a new branch for your changes.
+4. Make changes and commit them to your branch.
+5. Push your branch to your forked repository.
+6. Submit a pull request to the main repository.
