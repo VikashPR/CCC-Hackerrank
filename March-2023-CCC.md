@@ -441,6 +441,34 @@ employees.sort()
 for employee in employees:
     print(employee.name, employee.salary)
 ```
+
+# Task Scheduling 1
+![Python](https://img.shields.io/badge/Python3-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
+
+``` python
+def solve():
+    n = int(input())
+    t = list(map(int, input().split()))
+    p = list(map(int, input().split()))
+
+    tasks = sorted(zip(t, p), key=lambda x: -x[1])
+    total_profit = 0
+    schedule = [False] * n
+
+    for task in tasks:
+        deadline, profit = task
+        for i in range(min(n, deadline)-1, -1, -1):
+            if not schedule[i]:
+                schedule[i] = True
+                total_profit += profit
+                break
+
+    print(total_profit)
+
+t = int(input())
+for _ in range(t):
+    solve()
+```
 # CCT 04 - The Sprinklers
 ![CPP](https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)
 ``` cpp
