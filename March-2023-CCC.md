@@ -360,7 +360,22 @@ n = int(input())
 arr = list(map(int, input().split()))
 print(MaxBinaryStringLen(n, arr))
 ```
+# N 504 - Count the Lower elements
+![Python](https://img.shields.io/badge/Python3-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
+``` python
+from bisect import bisect_right
 
+n, m = map(int, input().split())
+a = list(map(int, input().split()))
+b = list(map(int, input().split()))
+
+a.sort()
+
+for bj in b:
+    i = bisect_right(a, bj)
+    print(i, end=' ')
+
+```
 # CCT 04 - The Sprinklers
 ![CPP](https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)
 ``` cpp
