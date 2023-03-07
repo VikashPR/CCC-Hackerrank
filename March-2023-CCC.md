@@ -417,6 +417,30 @@ _, count = merge_sort_and_count_inversions(a)
 
 print(count)
 ```
+# Z 461 : Salary Details
+![Python](https://img.shields.io/badge/Python3-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
+``` python
+n = int(input())
+
+class Employee:
+    def __init__(self, name, salary):
+        self.name = name
+        self.salary = salary
+
+    def __lt__(self, other):
+        if self.salary == other.salary:
+            return self.name < other.name
+        return self.salary < other.salary
+
+employees = []
+for i in range(n):
+    name, salary = input().split()
+    employees.append(Employee(name, int(salary)))
+
+employees.sort()
+for employee in employees:
+    print(employee.name, employee.salary)
+```
 # CCT 04 - The Sprinklers
 ![CPP](https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)
 ``` cpp
