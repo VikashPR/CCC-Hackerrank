@@ -340,6 +340,27 @@ for i in range(n):
 print(count)
 ```
 
+# N 503 - Strength of 1s in unity
+![Python](https://img.shields.io/badge/Python3-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
+``` python
+def MaxBinaryStringLen(n, arr):
+    left = right = ans = count = 0
+    while right < n:
+        if arr[right] == 1:
+            count += 1
+            right += 1
+        else:
+            ans = max(ans, count)
+            count = 0
+            right += 1
+            left = right
+    return max(ans, count)
+
+n = int(input())
+arr = list(map(int, input().split()))
+print(MaxBinaryStringLen(n, arr))
+```
+
 # CCT 04 - The Sprinklers
 ![CPP](https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)
 ``` cpp
@@ -418,3 +439,4 @@ int main(){
     return 0;
 }
 ```
+
