@@ -278,7 +278,39 @@ if __name__ == "__main__":
         print("{:.12f}".format(maxValue))
 ```
 
-### CCT 04 - The Sprinklers
+# N 501 - Ted Mobsy and Candies
+![Python](https://img.shields.io/badge/Python3-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
+
+``` python
+import math
+
+def binarysearch(arr, n, k):
+    l = 0
+    h = n - 1
+    while l <= h:
+        mid = math.floor((l+h)/2)
+        if arr[mid] == k:
+            return 1
+        elif arr[mid] < k:
+            l = mid + 1
+        else:
+            h = mid - 1
+    return 0
+
+n = int(input())
+arr = list(map(int, input().split()))
+m = int(input())
+can = list(map(int, input().split()))
+
+for i in range(m):
+    if binarysearch(arr, n, can[i]):
+        print("Happy Halloween!")
+    else:
+        print("Tricky!")
+
+```
+
+# CCT 04 - The Sprinklers
 ![CPP](https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)
 ``` cpp
 #include<iostream>
@@ -356,4 +388,3 @@ int main(){
     return 0;
 }
 ```
-
