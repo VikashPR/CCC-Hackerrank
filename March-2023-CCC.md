@@ -759,6 +759,21 @@ min_cost = dp[n][m]
 
 print(min_cost)
 ```
+# S 501 : MAXIMUM SUBARRAY SUM
+![Python](https://img.shields.io/badge/Python3-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
+
+``` python
+n = int(input())
+arr = list(map(int, input().split()))
+
+max_ending_here = max_so_far = arr[0]
+
+for i in range(1, n):
+    max_ending_here = max(arr[i], max_ending_here + arr[i])
+    max_so_far = max(max_so_far, max_ending_here)
+
+print(max_so_far)
+```
 # I M07 - Discover the Substring
 ![Python](https://img.shields.io/badge/Python3-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
 
