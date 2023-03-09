@@ -759,21 +759,7 @@ min_cost = dp[n][m]
 
 print(min_cost)
 ```
-# S 501 : MAXIMUM SUBARRAY SUM
-![Python](https://img.shields.io/badge/Python3-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
 
-``` python
-n = int(input())
-arr = list(map(int, input().split()))
-
-max_ending_here = max_so_far = arr[0]
-
-for i in range(1, n):
-    max_ending_here = max(arr[i], max_ending_here + arr[i])
-    max_so_far = max(max_so_far, max_ending_here)
-
-print(max_so_far)
-```
 # I M07 - Discover the Substring
 ![Python](https://img.shields.io/badge/Python3-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
 
@@ -797,6 +783,55 @@ if count1 > count:
 print(count)
 ```
 
+# S 501 : MAXIMUM SUBARRAY SUM
+![Python](https://img.shields.io/badge/Python3-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
+
+``` python
+n = int(input())
+arr = list(map(int, input().split()))
+
+max_ending_here = max_so_far = arr[0]
+
+for i in range(1, n):
+    max_ending_here = max(arr[i], max_ending_here + arr[i])
+    max_so_far = max(max_so_far, max_ending_here)
+
+print(max_so_far)
+```
+
+# Un ordered pairs
+![Python](https://img.shields.io/badge/Python3-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
+``` python
+n, k = map(int, input().split())
+arr = list(map(int, input().split()))
+
+# initialize a dictionary to keep track of the count of remainders
+count = {}
+
+# loop through the array and update the count of remainders
+for i in range(n):
+    rem = arr[i] % k
+    if rem in count:
+        count[rem] += 1
+    else:
+        count[rem] = 1
+
+# initialize the number of pairs to 0
+pairs = 0
+
+# loop through the dictionary and count the number of pairs
+for i in range(1, k//2+1):
+    if i != k-i:
+        pairs += count.get(i, 0) * count.get(k-i, 0)
+    else:
+        pairs += (count.get(i, 0) * (count.get(i, 0)-1)) // 2
+
+# add the count of pairs with remainder 0
+pairs += (count.get(0, 0) * (count.get(0, 0)-1)) // 2
+
+# print the number of pairs
+print(pairs)
+```
 # S 504 : The Bag of Gold Again
 ![Python](https://img.shields.io/badge/Python3-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
 
