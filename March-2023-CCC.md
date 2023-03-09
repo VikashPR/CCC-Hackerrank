@@ -759,7 +759,7 @@ min_cost = dp[n][m]
 
 print(min_cost)
 ```
-#S 501 : MAXIMUM SUBARRAY SUM
+# S 501 : MAXIMUM SUBARRAY SUM
 ![Python](https://img.shields.io/badge/Python3-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
 
 ``` python
