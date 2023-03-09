@@ -617,6 +617,7 @@ public class Solution {
     }
 }
 ```
+
 # S 502 : Ways to Decode
 ![Python](https://img.shields.io/badge/Python3-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
 ``` python
@@ -639,6 +640,31 @@ def num_decodings(s: str) -> int:
 
 s = input()
 print(num_decodings(s))
+```
+
+# DP A1 Similarities Between Sequences
+![Python](https://img.shields.io/badge/Python3-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
+
+``` python
+def F(A, B):
+    n = len(A)
+    m = len(B)
+    dp = [[0] * (m+1) for _ in range(n+1)]
+    result = 0
+    for i in range(1, n+1):
+        for j in range(1, m+1):
+            if A[i-1] == B[j-1]:
+                dp[i][j] = dp[i-1][j-1] + 1
+                if dp[i][j] > result:
+                    result = dp[i][j]
+    return result
+
+n = int(input())
+A = list(map(int, input().split()))
+m = int(input())
+B = list(map(int, input().split()))
+
+print(F(A, B))
 ```
 # CCT 04 - The Sprinklers
 ![CPP](https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)
