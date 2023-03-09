@@ -759,7 +759,7 @@ min_cost = dp[n][m]
 
 print(min_cost)
 ```
-#I M07 - Discover the Substring
+# I M07 - Discover the Substring
 ![Python](https://img.shields.io/badge/Python3-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
 
 ``` python
