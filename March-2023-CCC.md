@@ -566,8 +566,8 @@ print(result)
 ```
 
 # Maximum Sum in an Array
-
 ![Python](https://img.shields.io/badge/Python3-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
+
 ``` Python
 n = int(input())
 arr = list(map(int, input().split()))
@@ -629,6 +629,36 @@ m = int(input())
 B = list(map(int, input().split()))
 
 print(F(A, B))
+```
+
+# DP A2 Converting a Sequence to Another
+![Python](https://img.shields.io/badge/Python3-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
+
+``` python
+n = int(input())
+A = list(map(int, input().split()))
+m = int(input())
+B = list(map(int, input().split()))
+
+# Initialize dp table
+dp = [[0]*(m+1) for _ in range(n+1)]
+
+# Base case
+for i in range(n+1):
+    dp[i][0] = i
+for j in range(m+1):
+    dp[0][j] = j
+
+# Fill dp table
+for i in range(1, n+1):
+    for j in range(1, m+1):
+        if A[i-1] == B[j-1]:
+            dp[i][j] = dp[i-1][j-1]
+        else:
+            dp[i][j] = min(dp[i][j-1], dp[i-1][j], dp[i-1][j-1]) + 1
+
+# Print result
+print(dp[n][m])
 ```
 # CCT 04 - The Sprinklers
 ![CPP](https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)
