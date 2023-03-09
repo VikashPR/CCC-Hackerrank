@@ -509,6 +509,22 @@ for i in range(t):
     print(result)
 ```
 
+# S 309 : Replace The Array
+![Python](https://img.shields.io/badge/Python3-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
+
+``` python
+n = int(input())
+arr = list(map(int, input().split()))
+
+max_right = 0
+for i in range(n-1, -1, -1):
+    current = arr[i]
+    arr[i] = max_right
+    max_right = max(max_right, current)
+
+arr[n-1] = 0
+print(*arr)
+```
 # CCT 04 - The Sprinklers
 ![CPP](https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)
 ``` cpp
