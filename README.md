@@ -11,7 +11,7 @@
 | Nov 2022 | CCC SRMIST KTR : CPS 02 : Sprint II OOP | Java | [Link](https://github.com/VikashPR/CCC-Hackerrank/blob/main/Nov-2022-CCC-OOP.md) |
 | Mar 2023 | CCC SRM KTR : CPS 03 : CTech DSBS | C++ / C / Python3 | [Link](https://github.com/VikashPR/CCC-Hackerrank/blob/main/March-2023-CCC.md) |
 | Mar 2023 | CCC Assesment Test | C++ / C / Python3 | [Link](https://github.com/VikashPR/CCC-Hackerrank/blob/main/March-2023-Test.md) |
-| Mar 2023 | CCC Exit Test | C++ / C / Python3 | [Link](https://gitub/com/VikashPR/CCC-Hackerrank/blob/main/March-2023-ExitTest.md) |
+| Mar 2023 | CCC Exit Test | C++ / C / Python3 | [Link](https://github.com/VikashPR/CCC-Hackerrank/blob/main/March-2023-ExitTest.md) |
 
 ### Credit for being partners in crime 
 
