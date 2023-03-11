@@ -64,7 +64,7 @@ vector<int> getOneBits(int n) {
 ![Python](https://img.shields.io/badge/Python3-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
 
 ``` python
-def last_letters(word):
+def lastLetters(word):
     last_two_letters = word[-2:][::-1]
     return " ".join(last_two_letters)
 ```
