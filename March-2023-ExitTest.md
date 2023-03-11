@@ -30,6 +30,15 @@ def matchingBraces(braces):
     return result
 ```
 
+# Given a string, create a new string made up of its last two letters, reversed...
+![Python](https://img.shields.io/badge/Python3-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
+
+``` python
+def last_letters(word):
+    last_two_letters = word[-2:][::-1]
+    return " ".join(last_two_letters)
+```
+
 # Dylan unexpectedly saw a present from one of his previous birthdays.
 ![Cpp](https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)
 ``` cpp
