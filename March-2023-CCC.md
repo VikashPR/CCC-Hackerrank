@@ -897,6 +897,24 @@ else:
     print(total)
 ```
 
+# CC 201 - Unicell Division
+![Python](https://img.shields.io/badge/Python3-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
+
+
+``` python
+def minAmoeba(N): 
+    if N == 1: 
+        return 1 
+    else: 
+        if N % 2 == 0: 
+            return minAmoeba(N // 2) 
+        else: 
+            return 1 + minAmoeba(N // 2) 
+N = int(input()) 
+
+print(minAmoeba(N)) 
+```
+
 # K-Divisibility of an Array
 ![Python](https://img.shields.io/badge/Python3-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
 ``` python
