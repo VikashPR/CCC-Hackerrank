@@ -865,6 +865,37 @@ for i in range(t):
     print(knapSack(W, wt, val, n))
 ```
 
+# Greedy Florist
+![Python](https://img.shields.io/badge/Python3-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
+
+``` python
+NK = input()
+
+N = int(NK.partition(' ')[0])
+K = int(NK.partition(' ')[2])
+
+prices = [int(x) for x in input().strip().split(' ')]
+
+if K == N:
+    print(sum(prices))
+else:
+    prices.sort()
+    friends = [[] for friend in range(K)]
+    
+    for friend in friends:
+        friend.append(prices.pop())
+    
+    index = 0
+    while prices:
+        friends[index].append(prices.pop()*(1+len(friends[index])))
+        index = (index + 1)%K
+        
+    total = 0
+    for friend in friends:
+        total += sum(friend)
+        
+    print(total)
+```
 
 # K-Divisibility of an Array
 ![Python](https://img.shields.io/badge/Python3-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
