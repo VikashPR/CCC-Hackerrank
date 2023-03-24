@@ -1094,3 +1094,148 @@ ans += (rem_counts[0] * (rem_counts[0] - 1)) // 2
 
 print(ans)
 ```
+
+# T 101 : Gunpreet and Stairs
+![Python](https://img.shields.io/badge/Python3-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
+
+# T 102 : Interesting Series
+![Python](https://img.shields.io/badge/Python3-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
+
+
+``` python
+N = int(input())
+
+dp = [0] * (N + 1)
+dp[1], dp[2], dp[3] = 1, 2, 4
+
+for i in range(4, N+1):
+    dp[i] = dp[i-1] + dp[i-2] + dp[i-3]
+
+print(dp[N])
+```
+
+``` python
+F0, F1, F2, N = map(int, input().split())
+
+dp = [0] * (N + 1)
+dp[0], dp[1], dp[2] = F0, F1, F2
+
+for i in range(3, N+1):
+    dp[i] = dp[i-1] ^ dp[i-2] + dp[i-3]
+
+print(dp[N])
+
+```
+
+# Z 560 : N Queens!
+![CPP](https://img.shields.io/badge/C%2B%2B14-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)
+``` cpp
+#include <iostream>
+using namespace std;
+
+bool issafe(int **arr, int x, int y, int n)
+
+{
+    for (int row = 0; row < x; row++)
+    {
+        if (arr[row][y] == 1)
+        {
+            return 0;
+        }
+    }
+
+    int row = x;
+    int col = y;
+    while (row >= 0 && col >= 0)
+    {
+        if (arr[row][col] == 1)
+        {
+            return 0;
+        }
+
+        row--;
+        col--;
+    }
+
+    row = x;
+    col = y;
+    while (row >= 0 && col < n)
+    {
+        if (arr[row][col] == 1)
+        {
+            return 0;
+        }
+        row--;
+        col++;
+    }
+    return 1;
+}
+
+bool nqueen(int **arr, int x, int n)
+
+{
+    if (x >= n)
+    {
+        return 1;
+    }
+
+    for (int col = 0; col < n; col++)
+    {
+        if (issafe(arr, x, col, n))
+        {
+            arr[x][col] = 1;
+            if (nqueen(arr, x + 1, n))
+            {
+                return 1;
+            }
+            arr[x][col] = 0;
+        }
+    }
+
+    return 0;
+}
+
+int main()
+
+{
+    int n;
+
+    cin >> n;
+
+    int **arr = new int *[n];
+
+    for (int i = 0; i < n; i++)
+
+    {
+        arr[i] = new int[n];
+
+        for (int j = 0; j < n; j++)
+
+        {
+
+            arr[i][j] = 0;
+        }
+    }
+
+    if (nqueen(arr, 0, n))
+
+    {
+        for (int i = 0; i < n; i++)
+        {
+            for (int j = 0; j < n; j++)
+
+            {
+
+                cout << arr[i][j] << " ";
+            }
+
+            cout << endl;
+        }
+    }
+    else
+
+    {
+        cout << "Not possible" << endl;
+    }
+}
+```
