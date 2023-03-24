@@ -1098,10 +1098,6 @@ print(ans)
 # T 101 : Gunpreet and Stairs
 ![Python](https://img.shields.io/badge/Python3-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
 
-# T 102 : Interesting Series
-![Python](https://img.shields.io/badge/Python3-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
-
-
 ``` python
 N = int(input())
 
@@ -1113,6 +1109,12 @@ for i in range(4, N+1):
 
 print(dp[N])
 ```
+
+# T 102 : Interesting Series
+![Python](https://img.shields.io/badge/Python3-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
+
+
+
 
 ``` python
 F0, F1, F2, N = map(int, input().split())
