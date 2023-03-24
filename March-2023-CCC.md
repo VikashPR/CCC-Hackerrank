@@ -799,6 +799,62 @@ for i in range(1, n):
 print(max_so_far)
 ```
 
+# CCT A6 - Toad Jumps
+![CPP](https://img.shields.io/badge/C%2B%2B14-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)
+
+``` cpp
+#include <stdio.h>
+#include <stdlib.h>
+
+int LS(int v[], int n) {
+    if (n == 0) {
+        return 0;
+    }
+
+    int* tail = (int*) malloc(n * sizeof(int));
+    int length = 1;
+    tail[0] = v[0];
+
+    for (int i = 1; i < n; i++) {
+        int j = 0;
+        int left = 0, right = length;
+        while (left < right) {
+            int mid = (left + right) / 2;
+            if (tail[mid] < v[i]) {
+                j = mid + 1;
+                left = mid + 1;
+            } else {
+                right = mid;
+            }
+        }
+        if (j == length) {
+            tail[length] = v[i];
+            length += 1;
+        } else {
+            tail[j] = v[i];
+        }
+    }
+
+    free(tail);
+
+    return length - 1;
+}
+
+int main() {
+    int n;
+    scanf("%d", &n);
+
+    int v[n];
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &v[i]);
+        v[i] = -v[i];
+    }
+    printf("%d\n", LS(v, n));
+
+    return 0;
+}
+```
+
 # Un ordered pairs
 ![Python](https://img.shields.io/badge/Python3-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
 ``` python
@@ -863,6 +919,55 @@ for i in range(t):
         wt.append(w)
         val.append(v)
     print(knapSack(W, wt, val, n))
+```
+
+# E05 - The Lower Case Letters
+![Python](https://img.shields.io/badge/Python3-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
+
+``` python
+import sys
+    
+str = sys.stdin.readline().strip()
+n = len(str)
+ans = (n * (n + 1)) // 2
+cnt = [0] * 26
+    
+for i in range(n):
+    cnt[ord(str[i]) - ord('a')] += 1
+    
+for i in range(26):
+    ans -= (cnt[i] * (cnt[i] - 1)) // 2 + cnt[i]
+print(ans + 1)
+```
+
+# Are the Rooms Enough?
+![Python](https://img.shields.io/badge/Python3-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
+
+``` python
+import heapq
+
+n, k = map(int, input().split())
+
+bookings = []
+for i in range(n):
+    arrival, departure = map(int, input().split())
+    bookings.append((arrival, departure))
+
+bookings.sort()
+
+heap = []
+
+for booking in bookings:
+    while heap and heap[0] < booking[0]:
+        heapq.heappop(heap)
+
+    heapq.heappush(heap, booking[1])
+
+    if len(heap) > k:
+        print("no")
+        exit()
+
+print("yes")
 ```
 
 # Greedy Florist
