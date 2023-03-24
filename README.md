@@ -1,6 +1,6 @@
 # CCC-Hackerrank Code 
 
-![Visitors](https://visitor-badge.glitch.me/badge?page_id=VikashPR.CCC-Hackerrank&style=flat-square&color=blueviolet)
+![Visitors](https://visitor-badge.glitch.me/badge?page_id=VikashPR.CCC-Hackerrank)
 
 ## Languages Used
 ![C](https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white)
