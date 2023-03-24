@@ -1020,6 +1020,59 @@ N = int(input())
 print(minAmoeba(N)) 
 ```
 
+# CC 202 : Destroy the City - 1
+![CPP](https://img.shields.io/badge/C%2B%2B14-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)
+
+``` cpp
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+#include <limits.h>
+
+long min(long x,long y)
+{
+    return x<=y ? x : y;
+}
+
+long minMovesToDestroy(int arr[],int l,int r,int v)
+{
+    if(l > r)
+        return 0;
+    int result = INT_MAX;
+    for(int i=l;i<=r;i++)
+    {
+        if(arr[i] == v)
+        {
+            result = minMovesToDestroy(arr,l,i-1,v) + minMovesToDestroy(arr,i+1,r,v);
+            break;
+        }
+    }
+    if(result == INT_MAX)
+        result = 1 + minMovesToDestroy(arr,l,r,v+1);
+    return min(result,r-l+1);
+}
+
+int main() 
+{
+    int testCases;
+    scanf("%d",&testCases);
+    
+    while(testCases--)
+    {
+        int buildingCount;
+        scanf("%d",&buildingCount);
+        
+        int heights[buildingCount], i;
+        for(i=0;i<buildingCount;i++)
+            scanf("%d",&heights[i]);
+        
+        printf("%ld\n",minMovesToDestroy(heights,0,buildingCount-1,0));
+    }
+    return 0;
+}
+```
+
 # K-Divisibility of an Array
 ![Python](https://img.shields.io/badge/Python3-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
 ``` python
