@@ -1300,3 +1300,21 @@ for i in range(1, n+1):
 
 print(unreachable_nodes)
 ```
+# An array of Non zero and Non Negative Numbers
+![Python](https://img.shields.io/badge/Python3-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
+``` python
+n = int(input())
+a = list(map(int, input().split()))
+
+dp = [0] * n
+dp2 = [0] * n
+
+dp[0] = a[0]
+dp2[0] = 0
+
+for i in range(1, n):
+    dp[i] = dp2[i-1] + a[i]
+    dp2[i] = max(dp[i-1], dp2[i-1])
+
+print(max(dp[-1], dp2[-1]))
+```
