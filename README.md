@@ -6,7 +6,7 @@
 
 ![Visitors](https://visitor-badge.glitch.me/badge?page_id=VikashPR.CCC-Hackerrank)
 
-## Contributors
+## Contributors 🚀
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
