@@ -1301,6 +1301,24 @@ for i in range(1, n+1):
 print(unreachable_nodes)
 ```
 
+# Z 449 Reversal of the ranks
+![Python](https://img.shields.io/badge/Python3-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
+``` python
+n = int(input())
+rank = list(map(int, input().split()))
+
+ans = [0] * n
+
+for i in range(n):
+    cnt = ans[:i].count(0)
+    ans[i] = rank[i] + cnt + 1
+    for j in range(i):
+        if ans[j] >= ans[i]:
+            ans[j] += 1
+
+print(*ans)
+```
+
 # Castles and Jealousy
 ![CPP](https://img.shields.io/badge/C%2B%2B14-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)
 ``` cpp
