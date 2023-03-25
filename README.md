@@ -14,6 +14,7 @@
   <tbody>
     <tr>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/KingJha04"><img src="https://avatars.githubusercontent.com/u/123471051?v=4?s=100" width="100px;" alt="Abhinav Jha"/><br /><sub><b>Abhinav Jha</b></sub></a><br /><a href="https://github.com/VikashPR/CCC-Hackerrank/commits?author=KingJha04" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="http://www.github.com/dharsan19"><img src="https://avatars.githubusercontent.com/u/104762761?v=4?s=100" width="100px;" alt="Dharsan"/><br /><sub><b>Dharsan</b></sub></a><br /><a href="https://github.com/VikashPR/CCC-Hackerrank/commits?author=dharsan19" title="Code">💻</a></td>
     </tr>
   </tbody>
 </table>
