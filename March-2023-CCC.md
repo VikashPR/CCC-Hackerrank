@@ -1424,3 +1424,34 @@ for i in range(1, n):
 
 print(max(dp[-1], dp2[-1]))
 ```
+
+# G 302 - Maze and repeat
+![Python](https://img.shields.io/badge/Python3-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
+
+``` python
+def find_largest_cycle(n, edges):
+    largest_cycle = 0
+    visited = set()
+    for i in range(n):
+        if i not in visited:
+            slow = i
+            fast = i
+            cycle_length = 0
+            while edges[fast] != -1:
+                slow = edges[slow]
+                fast = edges[edges[fast]]
+                cycle_length += 1
+                if slow == fast:
+                    largest_cycle = max(largest_cycle, cycle_length)
+                    visited.add(slow)
+                    break
+    return largest_cycle
+
+# Read input
+n = int(input())
+edges = list(map(int, input().split()))
+
+# Call function and print output
+print(find_largest_cycle(n, edges))
+
+```
