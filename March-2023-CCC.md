@@ -1455,3 +1455,23 @@ edges = list(map(int, input().split()))
 print(find_largest_cycle(n, edges))
 
 ```
+
+# G 303 Maze Entry - Maze Exit
+![Python](https://img.shields.io/badge/Python3-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
+``` python
+n = int(input())
+edges = list(map(int, input().split()))
+
+in_degrees = [0] * n
+
+# Count incoming edges for each cell
+for i in range(n):
+    if edges[i] != -1:
+        in_degrees[edges[i]] += 1
+
+# Find the cell with maximum incoming edges
+max_in_degrees = max(in_degrees)
+max_in_degrees_index = in_degrees.index(max_in_degrees)
+
+print(max_in_degrees_index)
+```
