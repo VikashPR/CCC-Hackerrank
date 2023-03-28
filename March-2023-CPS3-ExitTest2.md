@@ -77,3 +77,23 @@ int main() {
   for(auto s: ans) cout << s << endl;
 }
 ```
+
+# A binary number is a combination 
+![Python](https://img.shields.io/badge/Python3-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
+
+[Reference Tharunn25 ccc-exit-test](https://github.com/Tharunn25/ccc-exit-test/blob/main/a%20binary%20number%20is%20a%20combination.py)
+
+``` python
+def fourthBit(number):
+    # Convert decimal number to binary
+    binary = ""
+    while number > 0:
+        binary = str(number % 2) + binary
+        number //= 2
+    # Pad binary representation with leading zeros if necessary
+    binary = binary.zfill(15)
+    # Extract 4th digit from the right
+    fourth_digit = binary[-4]
+    # Convert fourth digit to integer and return it
+    return int(fourth_digit)
+```
