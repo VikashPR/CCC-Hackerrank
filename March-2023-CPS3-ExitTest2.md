@@ -230,3 +230,79 @@ def onesGroups(grid, queries):
 
     return res
 ```
+
+# A subsequence is a sequence of letters
+![C++](https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)
+
+### 13 / 15 test cases passed
+
+``` cpp
+#include<iostream>
+#include<string>
+#include<vector>
+#include<cstring>
+using namespace std;
+
+string vowel = "aeiouy";
+
+int vpos(char c)
+{
+    for (int i = 0; i < 6; ++i)
+        if (c == vowel[i])
+            return i;
+    return -1;
+}
+
+int magical(string s)
+{
+    int l = s.length();
+    int previndex[6];
+    memset(previndex, -1, sizeof(previndex));  // initialize to -1
+    vector<int> len(l, 0);
+    int i = 0, maxlen = 0;
+
+    // finding first 'a'
+    while (s[i] != 'a')
+    {
+        ++i;
+        if (i == l)
+            return 0;
+    }
+
+    previndex[0] = i;       //prev index of 'a'
+    len[i] = 1;
+
+    for ( ++i; i < l; ++i)
+    {
+        if (vpos(s[i]) >= 0)    // a vowel
+        {
+            /* Need to append to longest subsequence on its left, only for this vowel (for any vowels) and 
+             * its previous vowel (if it is not 'a')
+                This important observation makes it O(n) -- differnet from typical LIS
+            */
+            if (previndex[vpos(s[i])] >= 0)
+                len[i] = 1+len[previndex[vpos(s[i])]];
+
+            previndex[vpos(s[i])] = i;
+
+            if (s[i] != 'a')
+            {
+                if (previndex[vpos(s[i])-1] >= 0)
+                    len[i] = max(len[i], 1+len[previndex[vpos(s[i])-1]]);
+            }
+
+            maxlen = max(maxlen, len[i]);
+        }
+    }
+    return maxlen;
+}
+
+int main()
+{
+    string s;
+    cin>>s;
+    cout << magical(s);
+    return 0;
+}
+
+```
