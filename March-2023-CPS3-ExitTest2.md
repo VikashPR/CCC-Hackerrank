@@ -117,31 +117,6 @@ def kSub(k, nums):
     return count
 ```
 
-# Alex has to complete multi level game
-![Python](https://img.shields.io/badge/Python3-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
-
-[Reference Tharunn25 ccc-exit-test](https://github.com/Tharunn25/ccc-exit-test/blob/main/alex%20has%20to%20complete%20%20multi%20level%20game.py)
-
-``` python
-def maximumPoints(k, costs):
-    n = len(costs)
-    points = 0
-    total_cost = 0
-    skipped_cost = float('inf')
-    skipped = False
-    for i in range(n):
-        if not skipped and total_cost + costs[i] <= k:
-            total_cost += costs[i]
-            points += 1
-        elif skipped and total_cost + costs[i] + skipped_cost <= k:
-            total_cost += costs[i]
-            skipped_cost = min(skipped_cost, costs[i-1])
-        else:
-            skipped = True
-            skipped_cost = min(skipped_cost, costs[i])
-    return points
-```
-
 # Owner of the construction company
 ![Python](https://img.shields.io/badge/Python3-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
 
@@ -234,75 +209,111 @@ def onesGroups(grid, queries):
 # A subsequence is a sequence of letters
 ![C++](https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)
 
-### 13 / 15 test cases passed
 
 ``` cpp
-#include<iostream>
-#include<string>
-#include<vector>
-#include<cstring>
+#include<bits/stdc++.h>
+
 using namespace std;
-
-string vowel = "aeiouy";
-
-int vpos(char c)
-{
-    for (int i = 0; i < 6; ++i)
-        if (c == vowel[i])
-            return i;
-    return -1;
-}
-
-int magical(string s)
-{
-    int l = s.length();
-    int previndex[6];
-    memset(previndex, -1, sizeof(previndex));  // initialize to -1
-    vector<int> len(l, 0);
-    int i = 0, maxlen = 0;
-
-    // finding first 'a'
-    while (s[i] != 'a')
+#define mod 1000000007
+#define PRIME 1000000009
+#define endl '\n'
+#define pb push_back
+#define F first
+#define S second
+#define ll long long
+#define ull unsigned int
+#define all(c) c.begin(), c.end()
+#define rall(c) c.rbegin(), c.rend()
+#define sz(c) c.size()
+#define r(i, a, b) for (i = a; i < b; i++)
+  #define ra(i, a, b) for (i = a; i <= b; i++)
+    #define vi vector < int >
+    #define vil vector < ll >
+    /*// for hashing 131 and 1e9+7
+    // fermats theorem M-2
+    //mpow
+    //r=1;
+    //while(b)
+    //{
+    if(b&1) r=(r*a)%M
+    a=(a*a)%m;
+    b=b>>1;
+    //}
+    */
+    /*
+    void sieve(int n)
     {
-        ++i;
-        if (i == l)
-            return 0;
-    }
-
-    previndex[0] = i;       //prev index of 'a'
-    len[i] = 1;
-
-    for ( ++i; i < l; ++i)
+    bool prime[n + 1];
+    memset(prime, true, sizeof(prime));
+    for (int p = 2; p * p <= n; p++)
     {
-        if (vpos(s[i]) >= 0)    // a vowel
-        {
-            /* Need to append to longest subsequence on its left, only for this vowel (for any vowels) and 
-             * its previous vowel (if it is not 'a')
-                This important observation makes it O(n) -- differnet from typical LIS
-            */
-            if (previndex[vpos(s[i])] >= 0)
-                len[i] = 1+len[previndex[vpos(s[i])]];
-
-            previndex[vpos(s[i])] = i;
-
-            if (s[i] != 'a')
-            {
-                if (previndex[vpos(s[i])-1] >= 0)
-                    len[i] = max(len[i], 1+len[previndex[vpos(s[i])-1]]);
-            }
-
-            maxlen = max(maxlen, len[i]);
-        }
+    // If prime[p] is not changed,
+    // then it is a prime
+    if (prime[p] == true)
+    {
+    for (int i = p * p; i <= n; i += p)
+    prime[i] = false;
     }
-    return maxlen;
-}
+    }
+    }*/
 
-int main()
-{
-    string s;
-    cin>>s;
-    cout << magical(s);
-    return 0;
-}
+    ll solve() {
+      ll n, m, i, j;
+      ll k;
+      ll l, r;
+      string s;
+      cin >> s;
+      n = sz(s);
+      ll dp[n][5];
+      memset(dp, 0, sizeof(dp));
+      if (s[0] == 'a') dp[0][0] = 1;
+      for (int i = 1; i < n; i++) {
+        if (s[i] == 'a') {
+          dp[i][0] = 1 + dp[i - 1][0];
+        } else
+          dp[i][0] = dp[i - 1][0];
+        if (s[i] == 'e') {
+          if (dp[i - 1][1] != 0)
+            dp[i][1] = 1 + dp[i - 1][1];
+          if (dp[i - 1][0] != 0)
+            dp[i][1] = max(dp[i][1], 1 + dp[i - 1][0]);
+        } else
+          dp[i][1] = dp[i - 1][1];
+        if (s[i] == 'i') {
+          if (dp[i - 1][2] != 0)
+            dp[i][2] = 1 + dp[i - 1][2];
+          if (dp[i - 1][1] != 0)
+            dp[i][2] = max(dp[i][2], 1 + dp[i - 1][1]);
+        } else
+          dp[i][2] = dp[i - 1][2];
+        if (s[i] == 'o') {
+          if (dp[i - 1][3] != 0)
+            dp[i][3] = 1 + dp[i - 1][3];
+          if (dp[i - 1][2] != 0)
+            dp[i][3] = max(dp[i][3], 1 + dp[i - 1][2]);
+        } else
+          dp[i][3] = dp[i - 1][3];
+        if (s[i] == 'u') {
+          if (dp[i - 1][4] != 0)
+            dp[i][4] = 1 + dp[i - 1][4];
+          if (dp[i - 1][3] != 0)
+            dp[i][4] = max(dp[i][4], 1 + dp[i - 1][3]);
+        } else
+          dp[i][4] = dp[i - 1][4];
 
+      }
+      cout << dp[n - 1][4];
+      return 0;
+    }
+int main() {
+  ios_base::sync_with_stdio(false);
+  cin.tie(NULL);
+  ll t;
+  t = 1;
+  //cin>>t;
+  while (t--) {
+    solve();
+  }
+  return 0;
+}
 ```
