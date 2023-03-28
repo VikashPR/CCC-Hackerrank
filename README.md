@@ -4,11 +4,11 @@
 [![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
-<!-- ![Visitors](https://visitor-badge.glitch.me/badge?page_id=VikashPR.CCC-Hackerrank) -->
-
 ![Views](https://img.shields.io/badge/Views-13,439-blue)
 
-[![Update Visitors Badge](https://github.com/VikashPR/CCC-Hackerrank/actions/workflows/update-badge.yml/badge.svg)](https://github.com/VikashPR/CCC-Hackerrank/actions/workflows/update-badge.yml)
+![Visitors](https://img.shields.io/badge/dynamic/json?color=green&label=Visitors&query=value&url=https://api.countapi.xyz/hit/VikashPR/CCC-Hackerrank)
+
+
 ## Contributors 🚀
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
