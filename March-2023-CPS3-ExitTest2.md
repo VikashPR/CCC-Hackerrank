@@ -179,3 +179,22 @@ def maxProfit(costPerCut, salePrice, len):
     
     return max_profit
 ```
+
+# A new method has to be derived for decrypting
+![Python](https://img.shields.io/badge/Python3-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
+
+[Reference Tharunn25 ccc-exit-test](https://github.com/Tharunn25/ccc-exit-test/blob/main/a%20new%20method%20has%20to%20be%20derived%20for%20decrypting.py)
+
+``` python
+def findIndices(n, query):
+    arr = [None] * n
+    for L, R in query:
+        s = sum(arr[L:R+1])
+        if arr[L] is None:
+            arr[L] = s - sum(arr[:L])
+        for i in range(L+1, R+1):
+            if arr[i] is None:
+                arr[i] = s - arr[i-1]
+    X = [i for i in range(n) if arr[i] is not None]
+    return sorted(X) if X else [-1]
+```
