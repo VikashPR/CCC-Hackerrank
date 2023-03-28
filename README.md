@@ -35,6 +35,7 @@
 
 | Date | Session | Language | Link |
 | --- | --- | --- | --- |
+| Mar 2023 | CCC CPS3 Exit Test 2 |  C++ / C / Python3 | [Link]() |
 | Mar 2023 | CCC SRM KTR : CPS 03 : CTech DSBS | C++ / C / Python3 | [Link](https://github.com/VikashPR/CCC-Hackerrank/blob/main/March-2023-CCC.md) |
 | Mar 2023 | CCC Exit Test | C++ / C / Python3 | [Link](https://github.com/VikashPR/CCC-Hackerrank/blob/main/March-2023-ExitTest.md) |
 | Mar 2023 | CCC Assessment Test | C++ / C / Python3 | [Link](https://github.com/VikashPR/CCC-Hackerrank/blob/main/March-2023-Test.md) |
