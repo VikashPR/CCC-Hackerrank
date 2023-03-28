@@ -8,6 +8,7 @@
 
 ![Visitors](https://img.shields.io/badge/Visitors-12,810-blue)
 
+[![Update Visitors Badge](https://github.com/VikashPR/CCC-Hackerrank/actions/workflows/update-badge.yml/badge.svg)](https://github.com/VikashPR/CCC-Hackerrank/actions/workflows/update-badge.yml)
 ## Contributors 🚀
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
