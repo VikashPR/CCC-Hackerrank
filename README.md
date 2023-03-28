@@ -6,7 +6,7 @@
 
 <!-- ![Visitors](https://visitor-badge.glitch.me/badge?page_id=VikashPR.CCC-Hackerrank) -->
 
-![Visitors](https://img.shields.io/badge/Visitors-13,439-blue)
+![Views](https://img.shields.io/badge/Views-13,439-blue)
 
 [![Update Visitors Badge](https://github.com/VikashPR/CCC-Hackerrank/actions/workflows/update-badge.yml/badge.svg)](https://github.com/VikashPR/CCC-Hackerrank/actions/workflows/update-badge.yml)
 ## Contributors 🚀
