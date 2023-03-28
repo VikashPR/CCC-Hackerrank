@@ -4,7 +4,9 @@
 [![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
-![Visitors](https://visitor-badge.glitch.me/badge?page_id=VikashPR.CCC-Hackerrank)
+<!-- ![Visitors](https://visitor-badge.glitch.me/badge?page_id=VikashPR.CCC-Hackerrank) -->
+
+![Visitors](https://img.shields.io/badge/Visitors-12,810-blue)
 
 ## Contributors 🚀
 
