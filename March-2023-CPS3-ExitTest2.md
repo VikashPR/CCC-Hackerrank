@@ -116,3 +116,28 @@ def kSub(k, nums):
         frequency[remainder] += 1
     return count
 ```
+
+# Alex has to complete multi level game
+![Python](https://img.shields.io/badge/Python3-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
+
+[Reference Tharunn25 ccc-exit-test](https://github.com/Tharunn25/ccc-exit-test/blob/main/alex%20has%20to%20complete%20%20multi%20level%20game.py)
+
+``` python
+def maximumPoints(k, costs):
+    n = len(costs)
+    points = 0
+    total_cost = 0
+    skipped_cost = float('inf')
+    skipped = False
+    for i in range(n):
+        if not skipped and total_cost + costs[i] <= k:
+            total_cost += costs[i]
+            points += 1
+        elif skipped and total_cost + costs[i] + skipped_cost <= k:
+            total_cost += costs[i]
+            skipped_cost = min(skipped_cost, costs[i-1])
+        else:
+            skipped = True
+            skipped_cost = min(skipped_cost, costs[i])
+    return points
+```
