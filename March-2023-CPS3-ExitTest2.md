@@ -584,3 +584,70 @@ def minCost(g_nodes, g_from, g_to, g_weight):
     add_extra_edges(g_nodes, g_from, g_to, g_weight)
     return dijkstra(g_nodes, g_from, g_to, g_weight)
 ```
+
+# Construction company
+
+``` python
+max_profit = 0
+    
+    for sale_length in range(1, max(lengths) + 1):
+        sale_price_per_rod = salePrice * sale_length
+        profit = 0
+
+        for rod_length in lengths:
+            uniform_rods = rod_length // sale_length
+            
+            if uniform_rods > 0:
+                extra_cut = 1 if rod_length % sale_length > 0 else 0
+                total_cuts = uniform_rods - 1 + extra_cut
+                
+                costs = total_cuts * costPerCut
+                revenues = uniform_rods * sale_price_per_rod
+                
+                if revenues > costs:
+                    profit += revenues - costs
+        if profit > max_profit:
+            max_profit = profit
+    
+    return max_profit
+```
+
+
+# Quality Agents
+![C++](https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)
+
+
+
+``` cpp
+int findLargestSquareSize(vector<vector<int>> samples) {
+        int n = samples.size();
+        vector<vector<int>>dp(n, vector<int> (n));
+        
+        for(int i=0;i<n;i++){
+            for(int j=0;j<n;j++){
+                if(i==0 || j==0){
+                    dp[i][j] = samples[i][j];
+                }
+            }
+        }
+        
+        for(int i=1;i<n;i++){
+            for(int j=1;j<n;j++){
+                if(samples[i][j]==1){
+                    dp[i][j] = 1+ min(dp[i][j-1], min(dp[i-1][j], dp[i-1][j-1]));
+                }
+            }
+        }
+        
+        int maxi = INT_MIN;
+        
+        for(int i=0;i<n;i++){
+            for(int j=0;j<n;j++){
+                if(dp[i][j]>maxi){
+                    maxi = dp[i][j];
+                }
+            }
+        }
+        return maxi;
+}
+```
