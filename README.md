@@ -4,9 +4,8 @@
 [![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
-![Views](https://img.shields.io/badge/Views-13,439-blue)
+![Views](https://img.shields.io/badge/Views-13,701-blue)
 
-![Visitors](https://img.shields.io/badge/dynamic/json?color=green&label=Visitors&query=value&url=https://api.countapi.xyz/hit/VikashPR/CCC-Hackerrank)
 
 
 ## Contributors 🚀
