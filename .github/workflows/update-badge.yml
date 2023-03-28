@@ -43,5 +43,6 @@ jobs:
             const newReadme = readme.replace(/!\[Visitors\]\([^)]+\)/, badge);
 
             fs.writeFileSync('README.md', newReadme);
+
           env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
