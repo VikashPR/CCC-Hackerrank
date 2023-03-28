@@ -12,35 +12,35 @@ jobs:
 
       - name: Update Visitors Badge
         uses: actions/github-script@v4
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           script: |
             const fs = require('fs');
             const fetch = require('node-fetch');
             const { createBadge } = require('badge-maker');
 
-            // Get the current visitor count
             const response = await fetch('https://api.github.com/repos/VikashPR/CCC-Hackerrank/traffic/views', {
               headers: {
                 'Authorization': `token ${{ secrets.GITHUB_TOKEN }}`
               }
             });
+
+            if (!response.ok) {
+              throw new Error(`HTTP error ${response.status} (${response.statusText})`);
+            }
+
             const data = await response.json();
             const visitors = data.count;
 
-            // Read the contents of the README file
             const readme = fs.readFileSync('README.md', 'utf8');
 
-            // Create a new badge with the updated visitor count
             const badge = createBadge({
               text: ['Visitors', visitors.toLocaleString()],
               colorscheme: 'blue',
               template: 'for-the-badge'
             });
 
-            // Replace the old badge with the new badge in the README file
             const newReadme = readme.replace(/!\[Visitors\]\([^)]+\)/, badge);
 
-            // Write the updated README file back to the repository
             fs.writeFileSync('README.md', newReadme);
+          env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
