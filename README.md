@@ -4,7 +4,7 @@
 [![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
-![Views](https://img.shields.io/badge/Views-13,701-blue)
+![Views](https://img.shields.io/badge/Views-13,828-blue)
 
 
 
