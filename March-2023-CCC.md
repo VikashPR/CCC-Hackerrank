@@ -1730,3 +1730,50 @@ int main() {
     return 0;
 }
 ```
+
+# G M03 - Grids of single digits
+![Python](https://img.shields.io/badge/Python3-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
+
+```python
+def isRowValid(sudoku,row_num):
+    return len((sudoku[row_num])) == 9
+
+def isColValid(sudoku,col_num):
+    col = [item[col_num] for item in sudoku]
+    return len(set(col)) == 9
+
+def isCelValid(sudoku,cel_row, cel_col):
+    vals = sudoku[cel_row][cel_col: cel_col+3]
+    vals.extend(sudoku[cel_row+1] [cel_col: cel_col+3])
+    vals.extend(sudoku[cel_row+2] [cel_col: cel_col+3])
+    return len(set(vals)) == 9
+
+def validateSudoku(sudoku):
+    
+    for i in range(0,9):
+        if not isRowValid(sudoku,i):
+            return False
+        if not isColValid(sudoku,i):
+            return False
+    for i in range(0, 9, 3):
+        for j in range(0, 9, 3):
+            # print(i, j)
+            if not isCelValid(sudoku,i, j):
+                return False
+    return True
+
+ 
+
+t=int(input())
+while t:
+    sudoku=[]
+    for i in range(9):
+            sudoku.append(list(map(int,(input().split()))))
+            
+    if (validateSudoku(sudoku)):
+        print("Valid")
+    else:
+        print("inValid")
+    
+    t-=1
+```
