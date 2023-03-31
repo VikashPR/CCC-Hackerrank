@@ -1777,3 +1777,35 @@ while t:
     
     t-=1
 ```
+
+# Z 560 : Ruling Queens
+![Python](https://img.shields.io/badge/Python3-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
+
+```python
+def solveNQueens(n):
+    res = []
+    dfs([-1]*n, 0, [], res)
+    return res
+
+def dfs(nums, index, path, res):
+    if index == len(nums):
+        res.append(path)
+        return  
+    for i in range(len(nums)):
+        nums[index] = i
+        if valid(nums, index):  
+            tmp = "0"*len(nums)
+            dfs(nums, index+1, path+[tmp[:i]+"1"+tmp[i+1:]], res)
+
+def valid(nums, n):
+    for i in range(n):
+        if abs(nums[i]-nums[n]) == n -i or nums[i] == nums[n]:
+            return False
+    return True
+
+n=int(input())
+for i in solveNQueens(n)[0]:
+    for j in i:
+        print(j,end=' ')
+    print()
+```
