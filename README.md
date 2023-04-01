@@ -4,7 +4,7 @@
 [![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
-![Views](https://img.shields.io/badge/dynamic/json?color=blue&label=Profile%20views&query=value&url=https%3A%2F%2Fapi.countapi.xyz%2Fhit%2Fvikashpr%2Fhackerrank-ccc)
+![Views](https://img.shields.io/badge/dynamic/json?color=green&label=Profile%20views&query=value&url=https%3A%2F%2Fapi.countapi.xyz%2Fhit%2Fvikashpr%2Fhackerrank-ccc&cache=none)
 
 
 
