@@ -708,3 +708,13 @@ def tasks(n, a, b):
 
     return n  - c
 ```
+
+# An automated painting machine
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+
+``` python
+def countPatterns(n):
+    result = 24*n - (9 * 8n - 9*2n - 18*3*n + 24)
+    mod = 10 ** 9 + 7
+    return result % mod
+```
