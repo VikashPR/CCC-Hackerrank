@@ -1,9 +1,10 @@
 # March 2023 CPS3 Exit Test 2
 
 # Given a number of array
+
 ![Python](https://img.shields.io/badge/Python3-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
 
-``` python
+```python
 def balancedSum(arr):
     total_sum = sum(arr)
     left_sum = 0
@@ -15,9 +16,10 @@ def balancedSum(arr):
 ```
 
 # Application logs are usefull in analyzing
+
 ![C++](https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)
 
-``` cpp
+```cpp
 #include <iostream>
 #include <vector>
 #include <algorithm>
@@ -34,8 +36,8 @@ vector<string> processLogs(vector<string> logs, int threshold) {
       if(x[i] == ' ') {
         if(sp1 == -1) sp1 = i;
         else sp2 = i;
-      } 
-    }  
+      }
+    }
     int from = stoi(x.substr(0, sp1));
     int to = stoi(x.substr(sp1 + 1, sp2 - sp1 - 1));
     // cout << from << " " << to << " " << endl;
@@ -78,12 +80,13 @@ int main() {
 }
 ```
 
-# A binary number is a combination 
+# A binary number is a combination
+
 ![Python](https://img.shields.io/badge/Python3-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
 
 [Reference Tharunn25 ccc-exit-test](https://github.com/Tharunn25/ccc-exit-test/blob/main/a%20binary%20number%20is%20a%20combination.py)
 
-``` python
+```python
 def fourthBit(number):
     # Convert decimal number to binary
     binary = ""
@@ -99,11 +102,12 @@ def fourthBit(number):
 ```
 
 # A k-subarray of an array is
+
 ![Python](https://img.shields.io/badge/Python3-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
 
 [Reference Tharunn25 ccc-exit-test](https://github.com/Tharunn25/ccc-exit-test/blob/main/a%20k-subarray%20of%20an%20array%20is.pypy)
 
-``` python
+```python
 def kSub(k, nums):
     count = 0
     prefix_sum = [0] * (len(nums) + 1)
@@ -118,15 +122,16 @@ def kSub(k, nums):
 ```
 
 # Owner of the construction company
+
 ![Python](https://img.shields.io/badge/Python3-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
 
 [Reference Tharunn25 ccc-exit-test](https://github.com/Tharunn25/ccc-exit-test/blob/main/owner%20of%20the%20construction%20company.py)
 
-``` python
+```python
 def maxProfit(costPerCut, salePrice, len):
     # Find the shortest rod length
     shortest_len = min(len)
-    
+
     # Iterate over all possible sale lengths that are factors of the shortest length
     max_profit = 0
     for i in range(1, shortest_len+1):
@@ -135,28 +140,30 @@ def maxProfit(costPerCut, salePrice, len):
             uniform_rods = 0
             for j in len:
                 uniform_rods += j // i
-            
+
             # Calculate the total length of all the rods that will be sold
             total_length = uniform_rods * i
-            
+
             # Calculate the number of cuts needed
             total_cuts = 0
             for j in len:
                 # Count the number of cuts needed for each rod
                 cuts = (j // i) - 1 if j % i == 0 else j // i
                 total_cuts += cuts
-            
+
             # Calculate the profit for this sale length
             profit = uniform_rods * i * salePrice - total_cuts * costPerCut
-            
+
             # Update the maximum profit
             max_profit = max(max_profit, profit)
-    
+
     return max_profit
 ```
 
 # In a Square Grid
+
 ![Python](https://img.shields.io/badge/Python3-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
+
 ```python
 def onesGroups(grid, queries):
     n = len(grid)
@@ -189,10 +196,10 @@ def onesGroups(grid, queries):
 ```
 
 # A subsequence is a sequence of letters
+
 ![C++](https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)
 
-
-``` cpp
+```cpp
 #include<bits/stdc++.h>
 
 using namespace std;
@@ -299,8 +306,11 @@ int main() {
   return 0;
 }
 ```
+
 # Alex has to complete a multi level game.
+
 ![Python](https://img.shields.io/badge/Python3-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
+
 ```python
 def maximumPoints(k, costs):
     # Write your code here
@@ -324,13 +334,15 @@ def maximumPoints(k, costs):
 
     return max(res, fin)
 ```
-# Given an array of integers 
+
+# Given an array of integers
+
 ![C++](https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)
 
-``` cpp
+```cpp
 #include<bits/stdc++.h>
 using namespace std;
-#define ll long long int 
+#define ll long long int
 #define pi pair<int ,int >
 #define pl pair<ll ,ll >
 #define pb push_back
@@ -343,7 +355,7 @@ using namespace std;
 #define se second
 #define all(x) x.begin(), x.end()
 #define _ <<" "<<
-#define forn(x,	n) for(int x = 0; x < n ;++ x) 
+#define forn(x,	n) for(int x = 0; x < n ;++ x)
 #define forn1n(x,n) for(int x = 1; x <= n ;++ x)
 #define forn1(x,n) for(int x = 1; x < n ;++ x)
 #define IOS ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
@@ -388,7 +400,7 @@ int main(){
 		pq.push(v[i]);
 	}
 	//reverse(all(v));
-	priority_queue<int,vector<int>,greater<int>>pqq;	
+	priority_queue<int,vector<int>,greater<int>>pqq;
 	pqq.push(v[0]);
 	forn1(i,n)
 	{
@@ -401,15 +413,15 @@ int main(){
 		}
 	}
  	cout<<min(cost1,cost2)<<endl;
-	return 0;	
+	return 0;
 }
 ```
 
-
 # An automated cutting machine is used
+
 ![Python](https://img.shields.io/badge/Python3-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
 
-``` python
+```python
 def cutThemAll(lengths, minLength):
     n=len(lengths)
     rl=sum(lengths)
@@ -429,9 +441,10 @@ def cutThemAll(lengths, minLength):
 ```
 
 # Bob and alice
+
 ![C++](https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)
 
-``` cpp
+```cpp
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -450,18 +463,18 @@ int MAXDIST = 1000 * 1000;
 
 
     void extractCoins(vector<vector<int>> &arr) {
-        for (int r = 0; r < R; r++) 
-            for (int c = 0; c < C; c++) 
-                if (arr[r][c] == 2) 
+        for (int r = 0; r < R; r++)
+            for (int c = 0; c < C; c++)
+                if (arr[r][c] == 2)
                     coins.push_back({r,c});
     }
 
 
     void setDistances(vector<vector<int>> &arr, int coin) {
-        for (int r = 0; r < R; r++) 
-            for (int c = 0; c < C; c++) 
+        for (int r = 0; r < R; r++)
+            for (int c = 0; c < C; c++)
                 dist[r][c][coin] = MAXDIST;
-        
+
         vector<vector<bool>> visited(R,vector<bool>(C,0));
         queue<pair<int,int>> q;
         pair<int,int> startPoint = coins[coin];
@@ -495,7 +508,7 @@ int MAXDIST = 1000 * 1000;
         if (dp[coin][seq] != -1) return dp[coin][seq];
 
         int res = INT_MAX;
-        for (int i = 0; i < numCoins; i++) 
+        for (int i = 0; i < numCoins; i++)
             if ((seq & (1 << i)) == 0) {
                 int newSeq = seq | (1 << i);
                 pair<int,int> pos = coins[i];
@@ -516,10 +529,10 @@ int MAXDIST = 1000 * 1000;
         int dpR = numCoins;
         int dpC = allOnes + 1;
         dp.resize(dpR,vector<int>(dpC,-1));
-        
+
         dist.resize(R,vector<vector<int>>(C,vector<int>(numCoins,0)));
-        
-        for (int i = 0; i < numCoins; i++) 
+
+        for (int i = 0; i < numCoins; i++)
             setDistances(arr, i);
         int ans = getMinDist(0, 1, Ra, Ca);
         return ans >= MAXDIST ? -1 : ans;
@@ -540,11 +553,11 @@ int main()
 }
 ```
 
-
 # Directed Graph
+
 ![C++](https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)
 
-``` cpp
+```cpp
 import heapq
 def add_extra_edges(g_nodes, g_from, g_to, g_weight):
     # create a set of edges
@@ -587,42 +600,40 @@ def minCost(g_nodes, g_from, g_to, g_weight):
 
 # Construction company
 
-``` python
+```python
 max_profit = 0
-    
+
     for sale_length in range(1, max(lengths) + 1):
         sale_price_per_rod = salePrice * sale_length
         profit = 0
 
         for rod_length in lengths:
             uniform_rods = rod_length // sale_length
-            
+
             if uniform_rods > 0:
                 extra_cut = 1 if rod_length % sale_length > 0 else 0
                 total_cuts = uniform_rods - 1 + extra_cut
-                
+
                 costs = total_cuts * costPerCut
                 revenues = uniform_rods * sale_price_per_rod
-                
+
                 if revenues > costs:
                     profit += revenues - costs
         if profit > max_profit:
             max_profit = profit
-    
+
     return max_profit
 ```
 
-
 # Quality Agents
+
 ![C++](https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)
 
-
-
-``` cpp
+```cpp
 int findLargestSquareSize(vector<vector<int>> samples) {
         int n = samples.size();
         vector<vector<int>>dp(n, vector<int> (n));
-        
+
         for(int i=0;i<n;i++){
             for(int j=0;j<n;j++){
                 if(i==0 || j==0){
@@ -630,7 +641,7 @@ int findLargestSquareSize(vector<vector<int>> samples) {
                 }
             }
         }
-        
+
         for(int i=1;i<n;i++){
             for(int j=1;j<n;j++){
                 if(samples[i][j]==1){
@@ -638,9 +649,9 @@ int findLargestSquareSize(vector<vector<int>> samples) {
                 }
             }
         }
-        
+
         int maxi = INT_MIN;
-        
+
         for(int i=0;i<n;i++){
             for(int j=0;j<n;j++){
                 if(dp[i][j]>maxi){
@@ -652,10 +663,11 @@ int findLargestSquareSize(vector<vector<int>> samples) {
 }
 ```
 
-# Graph of friends 
+# Graph of friends
+
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 
-``` python
+```python
 def maxShared(friends_nodes, friends_from, friends_to, friends_weight):
     # Write your code here
     res = {}                                                 # Edge frequency’s dictionary
@@ -681,9 +693,10 @@ def maxShared(friends_nodes, friends_from, friends_to, friends_weight):
 ```
 
 # Eric
+
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 
-``` python
+```python
 parent = []
 def find(x):
     if parent[x] == x:
@@ -691,13 +704,13 @@ def find(x):
     parent[x] = find(parent[x])
     return parent[x]
 def union(x, y):
-    px = find(x) 
+    px = find(x)
     py = find(y)
     if(px == py):
         return False
     parent[px] = py
     return True
-     
+
 def tasks(n, a, b):
     global parent
     parent = [x for x in range(n+1)]
@@ -710,9 +723,10 @@ def tasks(n, a, b):
 ```
 
 # An automated painting
+
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 
-``` python
+```python
 def countPatterns(n):
     result = 24*n - (9 * 8n - 9*2n - 18*3*n + 24)
     mod = 10 ** 9 + 7
@@ -720,40 +734,41 @@ def countPatterns(n):
 ```
 
 # Find the number of strings
+
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 
-``` python
+```python
 def countPerms(n):
 
 	MOD = 1e9 + 7
 
 
 	dp = [[0 for i in range(5)] for j in range(n + 1)]
-	
-	
+
+
 	for i in range(5):
 		dp[1][i] = 1
-	
-	
+
+
 	relation = [[1],[0, 2], [0, 1, 3, 4], [2, 4],[0]]
 
 	for i in range(1, n, 1):
-	
-		
+
+
 		for u in range(5):
 			dp[i + 1][u] = 0
 
-			
+
 			for v in relation[u]:
-			
-				
+
+
 				dp[i + 1][u] += dp[i][v] % MOD
 
-	
+
 	ans = 0
 	for i in range(5):
 		ans = (ans + dp[n][i]) % MOD
 
-	
+
 	return int(ans)
 ```
